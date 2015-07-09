@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="AB">
+<head>
+    <meta charset="UTF-8">
+    <title>Testing Form</title>
+    <script src="script/angular.min.js"></script>
+    <style>
+        body{
+            font: 12px verdana;
+        }
+        .half{
+            width: 45%;
+        }
+        .full{
+            width: 100%;
+        }
+        .f-left{
+            float: left;
+        }
+        .f-right{
+            float: right;
+        }
+        .t-left{
+            text-align: left;
+        }
+        .t-right{
+            text-align: right;
+        }
+        input[type="text"]:disabled{
+            background: #ecf0f1;
+        }
+        .red{
+            color: red;
+        }
+        .green{
+            color: green;
+        }
+        .mg-top-20{
+            margin-top: 20px;
+        }
+        table.info{
+            font-size: 16px;
+        }
+        .info th{
+            text-align: right;
+            vertical-align: top;
+        }
+        .info td, .info th{
+            padding: 10px 5px;
+        }
+        table.form{
+            border-spacing: 0;
+        }
+        .form th{
+            color: white;
+            background: #7f8c8d;
+            font-weight: normal;
+        }
+        .form tr.even{
+            background: #ecf0f1;
+        }
+        .form tr.tb td{
+            border-top: 2px solid black;
+            border-bottom: 5px double black;
+        }
+        .button{
+            width: 70px;
+        }
+        .poll{
+            width: 300px;
+        }
+        .content{
+            overflow: hidden;
+        }
+        .intro{
+            width: calc(100% - 400px);
+        }
+    </style>
+    <script>
+        angular.module("AB", []).controller("TestingController", function(){
+            var ctrl = this;
+
+            ctrl.totalAmount = 20000.00;
+
+            ctrl.listA = [];
+            ctrl.listB = [];
+
+            ctrl.options = [{type:"Cash", description: "",amount: 4000.00},
+                            {type:"Credit", description: "VISA #1234 5678 9012 1222", amount: 4000.00},
+                            {type:"Voucher", description: "Voucher #1234567899", amount: 4000.00}];
+            ctrl.selectedA = ctrl.options[0];
+            ctrl.selectedB = ctrl.options[0];
+
+            ctrl.add = function(list, data){
+                list.push(data);
+            };
+
+            ctrl.remove = function(list, index){
+                list.splice(index, 1)
+            }
+
+            ctrl.getPaidAmount = function(list){
+                return list.map(function(item){
+                    return item.amount;
+                }).reduce(function(a,b){
+                    return a+b;
+                }, 0);
+            }
+            ctrl.getUnsettled = function(list){
+                return ctrl.totalAmount - ctrl.getPaidAmount(list);
+            }
+        });
+    </script>
+</head>
+<body ng-controller="TestingController as ctrl">
+    <div class="content" style="border-bottom:2px solid #ecf0f1;">
+        <div class="f-left intro" style="padding: 0 20px;">
+            <h1>แบบทดสอบหน้าจอสำหรับการชำระเงิน</h1>
+            <table class="info">
+                <tr>
+                    <th>ผู้ใช้งาน</th>
+                    <td>พนักงาน</td>
+                </tr>
+                <tr>
+                    <th>สถานการณ์</th>
+                    <td>
+                        เมื่อลูกค้าชำระเงินค่าสินค้าและบริการ พนักงานจะกรอกข้อมูลเข้าสู่ระบบผ่านทางแบบฟอร์มด้านล่าง โดยลูกค้าสามารถชำระได้ด้วย เงินสด บัตรเครดิต หรือบัตรกำนัล โดยสามารถใช้ร่วมกันได้
+                    </td>
+                </tr>
+                <tr>
+                    <th>เงื่อนไข</th>
+                    <td>แบบฟอร์มจะสมบูรณ์ถูกต้องเมื่อ ไม่มียอดค้างชำระ (Unsettled amount เป็น 0.00)</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>กรุณาโหวดฟอร์มที่ท่านคิดว่าสามารถเข้าใจและใช้งานได้ง่ายกว่า ผ่านฟอร์มด้านขวามือ เมื่อทดสอบการใช้งานฟอร์มด้านล่างเสร็จแล้วเพียงครั้งเดียว</td>
+                </tr>
+            </table>
+        </div>
+        <div class="f-right poll">
+            <div id="qp_all358393" style="width:100%;"><link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'><STYLE>#qp_main358393 .qp_btna:hover input {background: rgb(59, 160, 56)!important} #qp_main358393[results='0'] .qp_a:hover {background: rgb(216, 216, 216)} #qp_main358393[results='0'] .qp_a[sel='1'] {background: rgb(212, 221, 250)}</STYLE><div id="qp_main358393" results=0 cmt=0 style="border-radius: 0px;margin: 0px;padding: 15px;font-family: 'Open Sans', sans-serif, Arial;color: rgb(0, 0, 0);border: 1px solid rgb(219, 217, 217);background: rgb(255, 255, 255)"><div style="font-size: 18px;color: rgb(255, 255, 255);font-family: 'Open Sans', sans-serif, Arial;background-color: rgb(46, 46, 46)"><div style="line-height: 30px;padding: 10px 15px">which type of form do you prefer?</div></div><form id="qp_form358393" action="//www.poll-maker.com/results358393xC2E64679-14" method="post" target="_blank" style="display: inline;margin: 0px;padding: 0px"><div style="padding: 0px"><input type=hidden name="qp_d358393" value="42195.0525115729-42195.0525003488"><div style="color: rgb(107, 107, 107);font-family: 'Open Sans', sans-serif, Arial;font-size: 16px;line-height: 1.5;padding: 10px;margin: 10px 0px;clear: both;-webkit-transition: background-color 100ms ease-in;transition: background-color 100ms ease-in;border-color: rgb(107, 107, 107);background: rgb(229, 229, 229)" class="qp_a" onClick="var c=this.getElementsByTagName('INPUT')[0]; if((!event.target?event.srcElement:event.target).tagName!='INPUT'){c.checked=(c.type=='radio'?true:!c.checked)};var i=this.parentNode.parentNode.parentNode.getElementsByTagName('INPUT');for(var k=0;k!=i.length-1;k++){i[k].parentNode.parentNode.setAttribute('sel',i[k].checked?1:0)}"><span style="display: block;padding-left: 30px;cursor: inherit"><input style="float: left;width: 20px;margin-left: -25px;margin-top: 2px;padding: 0px;height: 20px" name="qp_v358393" type="radio" value="1" />A</span></div><div style="color: rgb(107, 107, 107);font-family: 'Open Sans', sans-serif, Arial;font-size: 16px;line-height: 1.5;padding: 10px;margin: 10px 0px;clear: both;-webkit-transition: background-color 100ms ease-in;transition: background-color 100ms ease-in;border-color: rgb(107, 107, 107);background: rgb(229, 229, 229)" class="qp_a" onClick="var c=this.getElementsByTagName('INPUT')[0]; if((!event.target?event.srcElement:event.target).tagName!='INPUT'){c.checked=(c.type=='radio'?true:!c.checked)};var i=this.parentNode.parentNode.parentNode.getElementsByTagName('INPUT');for(var k=0;k!=i.length-1;k++){i[k].parentNode.parentNode.setAttribute('sel',i[k].checked?1:0)}"><span style="display: block;padding-left: 30px;cursor: inherit"><input style="float: left;width: 20px;margin-left: -25px;margin-top: 2px;padding: 0px;height: 20px" name="qp_v358393" type="radio" value="2" />B</span></div></div><div style="padding-left: 0px;height: 40px;clear: both"><a style="float: left;width: 50%;max-width: 140px;box-sizing: border-box;padding-right: 5px;text-decoration: none" class="qp_btna" href="#"><input name="qp_b358393" style="width: 100%;height: 40px;font-family: 'Open Sans', sans-serif, Arial;font-size: 16px;color: rgb(255, 255, 255);cursor: pointer;border: 0px rgb(255, 255, 255);-webkit-appearance: none;border-radius: 0px;background: rgb(74, 85, 189)" type="submit" btype="v" value="Vote" /></a><a style="float: left;width: 50%;max-width: 140px;box-sizing: border-box;padding-left: 5px;text-decoration: none" class="qp_btna" href="#"></a></div><a id="qp_a358393" style="float:right;font-family:Arial;font-size:10px;color:rgb(0,0,0);text-decoration:none" href="http://www.poll-maker.com">Poll Maker</a></form><div style="display:none"><div id="qp_rp358393" style="font-size: 11px;width: 5ex;text-align: right;overflow: hidden;position: absolute;right: 5px;height: 1.5em;line-height: 1.5em"></div><div id="qp_rv358393" style="font-size: 11px;width: 0%;line-height: 1.5em;text-align: right;color: rgb(255, 255, 255);box-sizing: border-box;padding-right: 3px"></div><div id="qp_rb358393" style="font-size: 12px;color: rgb(255, 255, 255);display: block"></div><div id="qp_rva358393" style="border-color: rgb(0, 111, 185);background: rgb(0, 111, 185)"></div><div id="qp_rvb358393" style="border-color: rgb(22, 52, 99);background: rgb(22, 52, 99)"></div><div id="qp_rvc358393" style="border-color: rgb(20, 129, 171);background: rgb(91, 207, 252)"></div></div></div></div><script src="//scripts.poll-maker.com/3012/scpolls.js" language="javascript"></script>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="half f-left mg-top-20" style="margin-left:20px;">
+            <h2>Form A</h2>
+            Payment type <select ng-model="ctrl.selectedA" ng-options="item.type for item in ctrl.options"></select>
+            <button ng-click="ctrl.add(ctrl.listA, ctrl.selectedA)">Add</button>
+
+            <table ng-if="ctrl.listA.length !== 0" class="form full mg-top-20">
+                <tr>
+                    <th></th>
+                    <th class="t-left">Payment type</th>
+                    <th class="t-left">Description</th>
+                    <th>amount</th>
+                </tr>
+                <tr ng-repeat="item in ctrl.listA track by $index" ng-class="{'even': $index % 2 === 1}">
+                    <td>
+                        <button ng-click="ctrl.remove(ctrl.listA, $index)">Remove</button>
+                    </td>
+                    <td>{{ item.type }}</td>
+                    <td>{{ item.description }}</td>
+                    <td class="t-right">{{ item.amount|number:2 }}</td>
+                </tr>
+            </table>
+
+            <div class="mg-top-20">
+                <div class="half f-left">
+                    Total Order Amount
+                    <input type="text" class="t-right" value="{{ ctrl.totalAmount|number:2 }}" disabled/>
+                </div>
+                <div class="half f-right">
+                    Paid Amount
+                    <input type="text" class="t-right" value="{{ ctrl.getPaidAmount(ctrl.listA)|number:2 }}" disabled/>
+                    <div ng-if="ctrl.getUnsettled(ctrl.listA) !== 0" class="red">
+                        (Unsettled amount {{ ctrl.getUnsettled(ctrl.listA)|number:2 }})
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="half f-right mg-top-20" style="margin-right:20px;">
+            <h2>Form B</h2>
+            Total Order Amount <strong>{{ ctrl.totalAmount|currency:'฿':2 }}</strong>
+            <table class="form full mg-top-20">
+                <tr>
+                    <th class="button"></th>
+                    <th class="t-left">Payment type</th>
+                    <th class="t-left">Description</th>
+                    <th>amount</th>
+                </tr>
+                <tr ng-repeat="item in ctrl.listB track by $index" ng-class="{'even': $index % 2 === 1}">
+                    <td>
+                        <button ng-click="ctrl.remove(ctrl.listB, $index)">Remove</button>
+                    </td>
+                    <td>{{ item.type }}</td>
+                    <td>{{ item.description }}</td>
+                    <td class="t-right">{{ item.amount|number:2 }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="3">
+                        <div ng-if="ctrl.listB.length === 0">Don't have any payment yet.</div>
+                        <div>
+                            Add new payment with
+                            <select ng-model="ctrl.selectedB" ng-options="item.type for item in ctrl.options"></select>
+                            <button ng-click="ctrl.add(ctrl.listB, ctrl.selectedB)">Add</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="tb">
+                    <td></td>
+                    <td></td>
+                    <td class="t-right">Total Paid Amount</td>
+                    <td class="t-right"><strong>{{ ctrl.getPaidAmount(ctrl.listB)|number:2 }}</strong></td>
+                </tr>
+                <tr ng-class="{'red': ctrl.getUnsettled(ctrl.listB) !== 0, 'green': ctrl.getUnsettled(ctrl.listB) === 0}">
+                    <td></td>
+                    <td></td>
+                    <td class="t-right">Unsettled Amount</td>
+                    <td class="t-right">
+                        <strong>{{ ctrl.getUnsettled(ctrl.listB)|number:2 }}</strong>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
