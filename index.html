@@ -1,37 +1,260 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="GameOfLife">
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Game of Life with Javascript and AngularJS</title>
-	<script src="js/angular/angular.min.js"></script>
-	<script src="js/game/module.js"></script>
-	<script src="js/game/controller/main.js"></script>
-	<script src="js/game/factory/universe.js"></script>
-	<link rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Supakit Thanadittagorn">
+    <title>Supakit Thanadittagorn</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
-<body ng-controller="GameController as game" class="align-center">
-	<h1>Game of Life with Javascript and AngularJS</h1>
-	<button id="example" class="example margin-right" ng-click="game.setGosperGliderGun()" ng-disabled="game.isRunning">
-		Gosper Glider Gun
-	</button>
-	<button id="evolve"
-			ng-class="{'start': !game.isRunning, 'stop': game.isRunning}"
-	        ng-click="game.evolve()">
-	    Auto Evolve
-	</button>
-	<button id="step-evolve" ng-click="game.nextStep()" ng-disabled="game.isRunning">Next Step Evolve</button>
-	<button id="reset" class="red" ng-click="game.reset()" ng-disabled="game.isRunning">Reset</button>
-	<div class="container">
-		<div ng-repeat="row in game.universe.cells" style="width: {{ 15 * row.length }}px;margin:0 auto;">
-			<div ng-repeat="cell in row track by $index"
-			     id="cell-{{ $parent.$index + 1 }}-{{ $index + 1 }}"
-			     class="cell"
-			     ng-class="{'active': cell }"
-			     ng-click="game.setLiveCell($parent.$index, $index)">
-			</div>
-		</div>
-		<div class="clear"></div>
-	</div>
-	<div id="footer"><a href="https://github.com/skyfoxs/AngularGameOfLife">skyfoxs@Github</a></div>
+<body>
+    <div class="content-container">
+        <article id="introduction">
+            <section id="image">
+                <img src="images/supakit.png" title="Supakit Thanadittagorn" alt="Supakit Thanadittagorn" width="125" height="125"/>
+            </section>
+            <section id="name">
+                <h1>Supakit Thanadittagorn</h1>
+                <h2>Developer</h2>
+            </section>
+            <section id="event-awards">
+                <p>Speaker, "Building Apps on Google App Engine", Google Dev fest 2012</p>
+                <p>Finalist, Google Apps Developer Challenge 2012</p>
+            </section>
+        </article>
+    </div>
+    <div class="content-container">
+        <section id="links">
+            <ul>
+                <li class="github icon">
+                    <a href="https://github.com/skyfoxs" target="_blank">Skyfoxs</a>
+                </li>
+                <li class="wordpress icon">
+                    <a href="http://imskyfoxs.wordpress.com" target="_blank">imSkyfoxs</a>
+                </li>
+                <li class="jsfiddle icon">
+                    <a href="https://jsfiddle.net/user/skyfoxs" target="_blank">Skyfoxs</a>
+                </li>
+                <li class="linkedin icon">
+                    <a href="http://th.linkedin.com/pub/supakit-thanadittagorn/29/930/741" target="_blank">
+                        Supakit
+                    </a>
+                </li>
+                <li id="email">
+                    <a href="mailto:skyfox.ku@gmail.com">skyfox.ku@gmail.com</a>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <div class="content-container">
+        <article id="information">
+            <section id="experience">
+                <h2>Experience</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Duration</th>
+                            <th>Detail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Apr 2011-Present</td>
+                            <td>
+                                <h3>
+                                    <a href="http://riverpark.co.th" target="_blank">
+                                        Riverpark Consultant Co. Ltd.
+                                    </a>
+                                    working @<a href="http://www.dtac.co.th" target="_blank">dtac</a>
+                                </h3>
+                                <ul>
+                                    <li>
+                                        <cite>OM Redesign</cite>
+                                        New order management for dtac hall and call center
+                                    </li>
+                                    <li>
+                                        <cite>AutoVoid 7-11</cite>
+                                        Tuxedo service for cancel receipt refilled via 7-eleven
+                                    </li>
+                                    <li>
+                                        <cite>GNP</cite>
+                                        Enhance global numbering plan workflow service to support new billing system
+                                    </li>
+                                    <li>
+                                        <cite>QNPDB</cite>
+                                        Web interface for Query number port database system
+                                    </li>
+                                    <li>
+                                        <cite>Provisioning Web UI</cite>
+                                        Web application for provisioning service
+                                    </li>
+                                    <li>
+                                        <cite>Interconnect DTN</cite>
+                                        Enhance InterConnect (IC) batch to support dtac Trinet
+                                    </li>
+                                    <li>
+                                        <cite>neO-Batch app</cite>
+                                        Prepaid recurring billing system
+                                    </li>
+                                    <li>
+                                        <cite>Partner Provisioning Gateway (Saharat)</cite>
+                                        Enhance provisioning gateway for dtac wifi service
+                                    </li>
+                                    <li>
+                                        <cite>Partner Provisioning Gateway (Deezer)</cite>
+                                        Deezer provisioning service for provisioning gateway
+                                    </li>
+                                    <li>
+                                        <cite>PointBlank</cite>
+                                        Simple SMPP 3.4 server simulator
+                                    </li>
+
+                                    <li>
+                                        <cite>CPA - NeO</cite>
+                                        Modify the interface for integrate with NeO
+                                    </li>
+                                    <li>
+                                        <cite>NewCpaWeb</cite>
+                                        Add new page to web application for calling bash (Unix shell) on server
+                                    </li>
+
+                                    <li>
+                                        <cite>Abacus-ETL</cite>
+                                        Simple exe application from python for merging unload csv files with user-defined rules
+                                    </li>
+                                    <li>
+                                        <cite>Riverpark Leaf</cite>
+                                        Web application for sending and approving a leave of absence request
+                                    </li>
+                                    <li>
+                                        <cite>Riverpark root</cite>
+                                        Portal web application for employee integrated with redesign RiverPark Leaf
+                                    </li>
+                                    <li>
+                                        <cite>dtac convergent billing</cite>
+                                        New prepaid recurring billing system for NeO (new order management by Accenture)
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Dec 2009-Mar 2011</td>
+                            <td>
+                                <h3>
+                                    <a href="http://www.eng.ku.ac.th" target="_blank">
+                                        Faculty of engineering, Kasetsart university
+                                    </a>
+                                </h3>
+                                <ul>
+                                    <li>
+                                        <cite>
+                                            <a href="http://wt.eng.ku.ac.th/wt" target="_blank">
+                                                KU Eng Worktraining
+                                            </a>
+                                        </cite>
+                                        Web application for summer work training
+                                    </li>
+                                    <li>
+                                        <cite>Teaching assistant</cite>
+                                        Programming C#
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mar-May 2010</td>
+                            <td>
+                                <h3>
+                                    <a href="http://www.csloxinfo.com" target="_blank">
+                                        CS Loxinfo Public Co. Ltd.
+                                    </a>
+                                    (Intern)
+                                </h3>
+                                <ul>
+                                    <li>Web application for network monitoring</li>
+                                    <li>Network configuration</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="repo">
+                <h2>Repositories</h2>
+                <ul>
+                    <li>
+                        <cite>
+                            <a href="https://github.com/skyfoxs/AngularGameOfLife" target="_blank">
+                                AngularGameOfLife
+                            </a>
+                        </cite>
+                        TDD javascript with AngularJS with Robot Selenium2Library for integration test
+                    </li>
+                    <li>
+                        <cite>
+                            <a href="https://github.com/skyfoxs/Contact" target="_blank">
+                                Contact
+                            </a>
+                        </cite>
+                        Sample AngularJS with REST request and mock Golang server
+                    </li>
+                    <li>
+                        <cite>
+                            <a href="https://bitbucket.org/skyfoxs/datepicker-offset" target="_blank">
+                                datepicker-offset
+                            </a>
+                        </cite>
+                        Modified jQuery UI datepicker for adding year offset to common era
+                    </li>
+                </ul>
+            </section>
+            <section id="skill">
+                <h2>Skills</h2>
+                <ul>
+                    <li>Swift, Objective C (Beginner)</li>
+                    <li>Javascript (jQuery, AngularJS)</li>
+                    <li>Golang</li>
+                    <li>Automate test with Robot framework (Selenium 2 Library)</li>
+                    <li>Basic continuous integration with Jenkins</li>
+                    <li>Version control (Git, Hg)</li>
+                    <li>HTML, CSS (Sass, Compass)</li>
+                    <li>Python (django, ReportLab)</li>
+                    <li>PHP</li>
+                    <li>C#</li>
+                    <li>SQL</li>
+                    <li>Java</li>
+                </ul>
+            </section>
+            <section id="education">
+                <h2>Education</h2>
+                <p>
+                    Bachelor of Engineering
+                    (<a href="http://www.cpe.ku.ac.th" target="_blank">Computer Engineering</a>)
+                    first class hornors,
+                    <a href="http://www.ku.ac.th" target="_blank">Kasetsart university</a>
+                </p>
+            </section>
+            <section id="recommendations">
+                <h2>Recommendations</h2>
+                <section class="recommendation">
+                    <div class="quote">
+                        <q>Supakit is excellent developer. He has an experience for web development.</q>
+                        <p>
+                            <span>Paween Pongthong</span>
+                            <small>Senior System Analyst at Riverpark Consultant Co., Ltd.</small>
+                        </p>
+                    </div>
+                    <div class=image>
+                        <img src="images/paween.jpg" title="Paween Pongthong" alt="Paween Pongthong" width="125" height="125" />
+                    </div>
+                </section>
+            </section>
+        </article>
+    </div>
+    <div class="content-container">
+        <section id="footer">
+            <small>Last update: Aug 30, 2016.
+        </section>
+    </div>
 </body>
 </html>

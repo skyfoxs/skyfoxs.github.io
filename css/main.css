@@ -1,79 +1,162 @@
-* { font-family:Arial, Helvetica, sans-serif; }
-html { background: #EFEFEF; }
-h1 {
-    margin-top: 60px;
-    color: #9365B8;
+@font-face {
+    font-family: "thaisansneue";
+    src: url('../fonts/thaisansneue-regular-webfont.eot');
+    src: url('../fonts/thaisansneue-regular-webfont.eot?#iefix') format('eot'), url('../fonts/thaisansneue-regular-webfont.woff') format('woff'), url('../fonts/thaisansneue-regular-webfont.ttf') format('truetype'), url('../fonts/thaisansneue-regular-webfont.svg') format('svg');
+    font-weight: "normal";
+    font-style: "normal";
 }
-.cell {
-    width: 13px;
-    height: 13px;
-    border: 1px solid #EFEFEF;
-    background: rgba(209, 213, 216, 0.46);
-    float: left;
+
+@font-face {
+    font-family: "thaisansneue-b";
+    src: url('../fonts/thaisansneue-bold-webfont.eot');
+    src: url('../fonts/thaisansneue-bold-webfont.eot?#iefix') format('eot'), url('../fonts/thaisansneue-bold-webfont.woff') format('woff'), url('../fonts/thaisansneue-bold-webfont.ttf') format('truetype'), url('../fonts/thaisansneue-bold-webfont.svg') format('svg');
+    font-weight: "normal";
+    font-style: "normal";
 }
-.cell.active {
-    background: #00A885;
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../fonts/fontawesome-webfont.eot?v=4.6.3');
+    src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.6.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.6.3') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.6.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.6.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
-.cell:hover{
-    cursor: pointer;
+
+html {
+    font-family: "thaisansneue";
+    font-size: 16px;
+    color: #555555;
+    overflow-y: scroll;
 }
-.align-center {
-    text-align: center;
+img { border-radius: 70px; }
+
+h1, h2, h3 {
+    font-weight: normal;
+    margin-bottom: 0;
 }
-.container {
+h1 { font-size: 30px; }
+h2 { font-size: 26px; }
+h3 { font-size: 18px; }
+h1, section > h2:first-child {
+    color: #005e9b;
     margin-top: 20px;
 }
 
-button {
-    font-size: 16px;
-    background: #54ACD2;
-    color: white;
-    border: none;
-    padding: 10px;
-    outline: none;
-    -webkit-transition: background 0.3s;
-    -moz-transition: background 0.3s;
-    transition: background 0.3s;
+th { display: none; }
+tr > td:first-child{
+    font-size: 18px;
+    color: #f95005;
+    vertical-align: top;
+    padding-right: 5px;
+    text-align: right;
 }
-button.start:before{
-    content: "Start ";
-}
-button.start{
-    background: #2969B0;
-}
-button.stop:before{
-    content: "Stop ";
-}
-button.example:before{
-    content: "Example: ";
-}
-button.red{
-    background: #E25041;
-}
-button.stop{
-    background: #F37934;
-}
-button:hover {
-    cursor: pointer;
-    background: black;
-}
-button:disabled{
-    cursor: not-allowed;
-    background: #D1D5D8;
-}
-button.margin-right{
-    margin-right: 10px;
-}
+td > h3{ margin: 0; padding-left: 5px;}
 
-.clear { clear: both; }
 a {
-    color: #28324E;
+    color: #1b8f0b;
     text-decoration: none;
-    -webkit-transition: color 0.3s;
-    -moz-transition: color 0.3s;
-    transition: color 0.3s;
 }
 a:hover {
-    color: #2969B0;
+    cursor: pointer;
+    color: #f97205;
 }
-#footer { margin: 20px; }
+cite {
+    font-family: "thaisansneue-b";
+    color: #626262;
+}
+
+article, #footer {
+    width: 960px;
+    margin: 0 auto;
+}
+.content-container {
+    clear: both;
+}
+#introduction {
+    padding-top: 40px;
+}
+#introduction section {
+    float: left;
+    width: 800px;
+}
+section#image {
+    width: 150px;
+    float: left;
+}
+#introduction h2 {
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+#event-awards p {
+    margin: 0;
+    font-size: 18px;
+}
+#links {
+    width: 960px;
+    margin: 0 auto;
+    padding: 10px 0 20px 0;
+}
+#links ul {
+    padding-left: 150px;
+}
+#links ul li {
+    float: left;
+    margin-right: 20px;
+    list-style: none;
+}
+.recommendation {
+    padding: 40px 20px;
+}
+.recommendation .quote {
+    width: 730px;
+    float: left;
+}
+.recommendation q { font-size: 20px; float: right;}
+.recommendation p { float:right; margin-top: 0; }
+.recommendation .image {
+    width: 160px;
+    float: right;
+    margin-top: -30px;
+    margin-bottom: 40px;
+}
+li.icon a:before{
+    font-family: 'FontAwesome';
+    font-size: 24px;
+    padding-right: 5px;
+    position: relative;
+    top: 1px;
+}
+li.icon.github a:before {
+    content: "\f113";
+}
+li.icon.wordpress a:before {
+    content: "\f19a";
+}
+li.icon.jsfiddle a:before {
+    content: "\f1cc";
+}
+li.icon.linkedin a:before {
+    content: "\f0e1";
+    padding-right: 1px;
+}
+
+@media print {
+    #links li:not(#email) a:after {
+        content: " " attr(href);
+    }
+    #links ul li {
+        clear: both;
+    }
+    li.icon.jsfiddle a:before {
+        left: -2px;
+        padding-right: 2px;
+    }
+    li.icon.linkedin a:before {
+        left: 2px;
+        padding-right: 0;
+    }
+    #information a:after{
+        content: " (" attr(href) ") ";
+    }
+    #experience{ page-break-after: always; }
+}
