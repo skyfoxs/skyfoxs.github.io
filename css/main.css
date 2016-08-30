@@ -83,6 +83,15 @@ section#image {
     width: 150px;
     float: left;
 }
+section#name h2:nth-child(2){
+    float: left;
+}
+section#name p {
+    margin-top: -6px;
+    padding-left: 10px;
+    line-height: 47px;
+    float: left;
+}
 #introduction h2 {
     margin-top: -10px;
     margin-bottom: 10px;
