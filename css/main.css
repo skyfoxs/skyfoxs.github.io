@@ -185,4 +185,7 @@ li.icon.linkedin a:before {
         content: " (" attr(href) ") ";
     }
     #experience{ page-break-after: always; }
+    #footer small:after{
+        content: " https://skyfoxs.github.io/";
+    }
 }
