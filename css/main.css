@@ -186,6 +186,6 @@ li.icon.linkedin a:before {
     }
     #experience{ page-break-after: always; }
     #footer small:after{
-        content: " https://skyfoxs.github.io/";
+        content: " printed from https://skyfoxs.github.io/";
     }
 }
