@@ -185,6 +185,15 @@ li.icon.linkedin a:before {
         content: " (" attr(href) ") ";
     }
     #experience{ page-break-after: always; }
+    #experience tr td {
+        text-align: left;
+        padding-top: 20px;
+    }
+    #experience td > ul {
+        position: relative;
+        left: -150px;
+        width: 900px;
+    }
     #footer small:after{
         content: " printed from https://skyfoxs.github.io/";
     }
