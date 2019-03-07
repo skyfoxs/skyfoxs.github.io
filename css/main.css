@@ -25,7 +25,7 @@
 html {
     font-family: "thaisansneue";
     font-size: 16px;
-    color: #555555;
+    color: #666;
     overflow-y: scroll;
 }
 img { border-radius: 70px; }
@@ -184,6 +184,9 @@ li.icon.linkedin a:before {
     #information a:after, #event-awards a:after{
         content: " (" attr(href) ") ";
     }
+    #information cite.break {
+        display: block;
+    }
     #experience{ page-break-after: always; }
     #experience tr td {
         text-align: left;
@@ -192,7 +195,7 @@ li.icon.linkedin a:before {
     #experience td > ul {
         position: relative;
         left: -150px;
-        width: 900px;
+        width: 930px;
     }
     #footer small:after{
         content: " printed from https://skyfoxs.github.io/";
