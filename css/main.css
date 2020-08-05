@@ -166,6 +166,13 @@ li.icon.linkedin a:before {
     padding-right: 1px;
 }
 
+span.unrevealed {
+    background: #666;
+}
+span.unrevealed::before, span.unrevealed::after {
+    content: '--';
+}
+
 @media print {
     #links li:not(#email) a:after {
         content: " " attr(href);
