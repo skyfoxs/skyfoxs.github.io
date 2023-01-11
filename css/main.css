@@ -1,210 +1,49 @@
-@font-face {
-    font-family: "thaisansneue";
-    src: url('../fonts/thaisansneue-regular-webfont.eot');
-    src: url('../fonts/thaisansneue-regular-webfont.eot?#iefix') format('eot'), url('../fonts/thaisansneue-regular-webfont.woff') format('woff'), url('../fonts/thaisansneue-regular-webfont.ttf') format('truetype'), url('../fonts/thaisansneue-regular-webfont.svg') format('svg');
-    font-weight: "normal";
-    font-style: "normal";
-}
-
-@font-face {
-    font-family: "thaisansneue-b";
-    src: url('../fonts/thaisansneue-bold-webfont.eot');
-    src: url('../fonts/thaisansneue-bold-webfont.eot?#iefix') format('eot'), url('../fonts/thaisansneue-bold-webfont.woff') format('woff'), url('../fonts/thaisansneue-bold-webfont.ttf') format('truetype'), url('../fonts/thaisansneue-bold-webfont.svg') format('svg');
-    font-weight: "normal";
-    font-style: "normal";
-}
-
-@font-face {
-    font-family: 'FontAwesome';
-    src: url('../fonts/fontawesome-webfont.eot?v=4.6.3');
-    src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.6.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.6.3') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.6.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.6.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-html {
-    font-family: "thaisansneue";
-    font-size: 16px;
-    color: #666;
-    overflow-y: scroll;
-}
-img { border-radius: 70px; }
-
-h1, h2, h3 {
-    font-weight: normal;
+section h1 {
+    margin-top: 15px;
     margin-bottom: 0;
 }
-h1 { font-size: 30px; }
-h2 { font-size: 26px; }
-h3 { font-size: 18px; }
-h1, section > h2:first-child {
-    color: #005e9b;
-    margin-top: 20px;
+
+section h5 {
+    margin-top: 0;
 }
 
-th { display: none; }
-tr > td:first-child{
-    font-size: 18px;
-    color: #f95005;
-    vertical-align: top;
-    padding-right: 5px;
-    text-align: right;
-    min-width: 170px;
+img {
+    width: 80px;
+    float: left;
+    margin-top: 4px;
+    margin-right: 10px;
 }
-td > h3{ margin: 0; padding-left: 5px;}
 
+section div {
+    float: left;
+}
+
+section {
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+section#wealth-plus {
+    margin-top: 60px;
+}
+
+.content-container {
+    padding: 20px;
+}
+
+footer {
+    font-size: 13px;
+}
 a {
-    color: #1b8f0b;
-    text-decoration: none;
+    color: #5d55b4;
 }
 a:hover {
-    cursor: pointer;
-    color: #f97205;
-}
-cite {
-    font-family: "thaisansneue-b";
-    color: #626262;
+    color: #2C294F;
 }
 
-article, #footer {
-    width: 960px;
-    margin: 0 auto;
-}
-.content-container {
-    clear: both;
-}
-#introduction {
-    padding-top: 40px;
-}
-#introduction section {
-    float: left;
-    width: 800px;
-}
-section#image {
-    width: 150px;
-    float: left;
-}
-section#name h2:nth-child(2){
-    float: left;
-}
-section#name p {
-    margin-top: -6px;
-    padding-left: 10px;
-    line-height: 47px;
-    float: left;
-}
-#introduction h2 {
-    margin-top: -10px;
-    margin-bottom: 10px;
-}
-#event-awards p {
-    margin: 0;
-    font-size: 18px;
-}
-#links {
-    width: 960px;
-    margin: 0 auto;
-    padding: 10px 0 20px 0;
-}
-#links ul {
-    padding-left: 150px;
-}
-#links ul li {
-    float: left;
-    margin-right: 20px;
-    list-style: none;
-}
-.recommendation {
-    padding: 25px 20px;
-    overflow: hidden;
-}
-.recommendation:nth-child(2) {
-    margin-top: 40px;
-}
-.recommendation .quote {
-    width: 740px;
-    float: left;
-}
-.recommendation:nth-child(2n) .quote {
-    float: right;
-    width: 760px;
-}
-
-.recommendation q { font-size: 20px; float: right;}
-.recommendation p { float:right; margin-top: 0; }
-.recommendation:nth-child(2n) p {
-    float: left;
-}
-.recommendation .image {
-    width: 150px;
-    float: right;
-    margin-top: -20px;
-    margin-bottom: 30px;
-}
-.recommendation:nth-child(2n) .image {
-    float: left;
-}
-
-li.icon a:before{
-    font-family: 'FontAwesome';
-    font-size: 24px;
-    padding-right: 5px;
-    position: relative;
-    top: 1px;
-}
-li.icon.github a:before {
-    content: "\f113";
-}
-li.icon.wordpress a:before {
-    content: "\f19a";
-}
-li.icon.jsfiddle a:before {
-    content: "\f1cc";
-}
-li.icon.linkedin a:before {
-    content: "\f0e1";
-    padding-right: 1px;
-}
-
-span.unrevealed {
-    background: #666;
-}
-span.unrevealed::before, span.unrevealed::after {
-    content: '--';
-}
-
-@media print {
-    #links li:not(#email) a:after {
-        content: " " attr(href);
-    }
-    #links ul li {
-        clear: both;
-    }
-    li.icon.jsfiddle a:before {
-        left: -2px;
-        padding-right: 2px;
-    }
-    li.icon.linkedin a:before {
-        left: 2px;
-        padding-right: 0;
-    }
-    #information a:after, #event-awards a:after{
-        content: " (" attr(href) ") ";
-    }
-    #information cite.break {
-        display: block;
-    }
-    #experience{ page-break-after: always; }
-    #experience tr td {
-        text-align: left;
-        padding-top: 20px;
-    }
-    #experience td > ul {
-        position: relative;
-        left: -150px;
-        width: 930px;
-    }
-    #footer small:after{
-        content: " printed from https://skyfoxs.github.io/";
+@media screen and (min-width: 960px) {
+    .content-container {
+        width: 960px;
+        margin: 0 auto;
     }
 }

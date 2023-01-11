@@ -1,22 +1,11 @@
-@font-face {
-    font-family: "NunitoSans";
-    src: url('../fonts/NunitoSans-Regular.ttf');
-    font-weight: "normal";
-    font-style: "normal";
-}
-
-@font-face {
+h2 {
     font-family: "NunitoSans-b";
-    src: url('../fonts/NunitoSans-Bold.ttf');
-    font-weight: "normal";
-    font-style: "normal";
+    margin-top: 50px;
+    margin-bottom: 0;
 }
 
-html {
-    font-family: "NunitoSans";
-    font-size: 20px;
-    color: #2C294F;
-    overflow-y: scroll;
+header, header div {
+    overflow: hidden;
 }
 
 header img {
@@ -25,27 +14,62 @@ header img {
     margin-top: 4px;
     margin-right: 10px;
 }
-header h1 {
+header h1, header h5 {
     float: left;
+    margin: 0;
+    width: 100%;
 }
-header {
-    overflow: hidden;
+header h1 {
+    margin-top: 10px;
+}
+header h5 {
+    margin-top: -5px;
+    margin-left: 5px;
 }
 
-h1, h2 {
-    font-family: "NunitoSans-b";
-}
-h2 {
-    margin-top: 50px;
-    margin-bottom: 0;
-}
 .content-container {
     padding: 20px;
+}
+
+#get-started {
+    overflow: hidden; 
+    margin-top: 80px;
+}
+#get-started img#app-store {
+    height: 60px;
+    margin: 20px 0;
+}
+#image {
+    float: left;
+}
+#content {
+    float: left;
+    max-width: 640px;
+    margin-top: 20px;
+}
+
+@media screen and (min-width: 300px) {
+    #image img {
+        width: 70%;
+        padding-left: 15%;
+    }
+    #image {
+        width: 100%;
+        margin-right: 0;
+    }
 }
 
 @media screen and (min-width: 960px) {
     .content-container {
         width: 960px;
         margin: 0 auto;
+    }
+    #image img {
+        width: 100%;
+        padding-left: 0;
+    }
+    #image {
+        width: 280px;
+        margin-right: 40px;
     }
 }

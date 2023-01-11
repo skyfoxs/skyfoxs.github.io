@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "NunitoSans";
+    src: url('../fonts/NunitoSans-Regular.ttf');
+    font-weight: "normal";
+    font-style: "normal";
+}
+
+@font-face {
+    font-family: "NunitoSans-b";
+    src: url('../fonts/NunitoSans-Bold.ttf');
+    font-weight: "normal";
+    font-style: "normal";
+}
+
+html {
+    font-family: "NunitoSans";
+    font-size: 20px;
+    color: #2C294F;
+    overflow-y: scroll;
+}
+
+h1 {
+    font-family: "NunitoSans-b";
+}
