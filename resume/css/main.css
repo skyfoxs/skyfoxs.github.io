@@ -207,4 +207,8 @@ span.unrevealed::before, span.unrevealed::after {
     #footer small:after{
         content: " printed from https://skyfoxs.github.io/";
     }
+
+    span.print-new-line {
+        display: block;
+    }
 }
